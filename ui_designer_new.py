@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'designer_newbkxjdp.ui'
+## Form generated from reading UI file 'designer_newVKJThO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -130,6 +130,8 @@ class Ui_MainWindow(object):
         self.settingsBtn = QPushButton(self.centralwidget)
         self.settingsBtn.setObjectName(u"settingsBtn")
         self.settingsBtn.setGeometry(QRect(830, 10, 61, 51))
+        self.settingsBtn.setStyleSheet(u"border: none;\n"
+"background-color: transparent;")
         icon2 = QIcon()
         icon2.addFile(u":/icons/Splitter_GUI_Assets_3/Settings Icon.png", QSize(), QIcon.Normal, QIcon.Off)
         self.settingsBtn.setIcon(icon2)

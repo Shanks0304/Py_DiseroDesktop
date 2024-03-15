@@ -45,7 +45,7 @@ class Drag(QWidget):
             self.fileDropped.emit(file_path)
 
     def updateStyle(self, hovered=False):
-        bgColor = "#565656" if hovered else "#1E1E1E"
+        bgColor = "#333333" if hovered else "#1E1E1E"
         self.setStyleSheet(f"""
             QLabel {{
                 border: 2px dashed #AAAAAA;

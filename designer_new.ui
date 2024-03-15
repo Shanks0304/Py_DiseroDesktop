@@ -359,6 +359,10 @@ p, li { white-space: pre-wrap; }
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: transparent;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
