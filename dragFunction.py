@@ -22,7 +22,7 @@ class Drag(QWidget):
         self.palette.setColor(self.label.foregroundRole(), QColor(86, 86, 86))
         self.label.setPalette(self.palette)
         self.label.setAlignment(Qt.AlignHCenter)
-        self.label.setFont(QFont('Source Sans Pro', 24))
+        self.label.setFont(QFont('Source Sans Pro', 18))
         self.label.setStyleSheet("padding-top: 20px;")
         self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
         self.layout().addWidget(self.label)
