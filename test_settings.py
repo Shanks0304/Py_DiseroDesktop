@@ -198,18 +198,34 @@ class MainWindow(QMainWindow):
             self.ui.importPg_lbl.setText("Export Directory does not exist, please choose another one in the settings")
             return
         
-        self.ui.settingsBtn.setEnabled(False)
-        self.ui.stackedWidget.setCurrentIndex(1) 
         # Create temporary directories
         self.input_file = Path(self.ui.importPg_wid_fileDrg.file_path)
         self.input_file_name = self.input_file.stem
 
         # Create final directory for stems to be placed in
         self.final_output_dir = os.path.join(self.master_output_dir, str(self.input_file_name))
+        error_occurred = False
+        try:
+            os.makedirs(self.final_output_dir)
+        except FileExistsError:
+            print("File exists already")
+            error_occurred = True
+
+        if error_occurred:
+            self.ui.importPg_lbl.setText("File Exists Error")
+            self.ui.importPg_btn_imp.show()
+            self.ui.importPg_btn_spl.hide()
+            self.ui.importPg_wid_fileDrg.label.setText("Drop a file here!")
+            return
+        else:
+            print("no error occurred")
+        '''
         if os.path.exists(self.final_output_dir):
             self.ui.settingsPg_stp_lbl.setText("Folder Exists Please Try Again")
-        os.makedirs(self.final_output_dir)
+        '''    
         
+        self.ui.settingsBtn.setEnabled(False)
+        self.ui.stackedWidget.setCurrentIndex(1) 
         self.temp_dir_path = Path(tempfile.mkdtemp(dir=self.final_output_dir))
         self.temp_input_file = self.temp_dir_path / f"{self.input_file_name}_temp.wav"
         adjust_volume_and_save(self.input_file, -10, self.temp_input_file)
