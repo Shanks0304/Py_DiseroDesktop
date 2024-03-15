@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Splitter_GUI_Assets_3/Browse Button Default.png</file>
+    <file>Splitter_GUI_Assets_3/Browse Button Hover.png</file>
+    <file>Splitter_GUI_Assets_3/Browse Button Icon.png</file>
+    <file>Splitter_GUI_Assets_3/File Drop Icon.png</file>
+    <file>Splitter_GUI_Assets_3/Rectangle Default.png</file>
+    <file>Splitter_GUI_Assets_3/Rectangle Hover.png</file>
+    <file>Splitter_GUI_Assets_3/Settings Icon.png</file>
+    <file>Splitter_GUI_Assets_3/Split Button Default.png</file>
+    <file>Splitter_GUI_Assets_3/Split Button Hover.png</file>
+  </qresource>
+</RCC>
