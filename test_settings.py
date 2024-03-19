@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import sys
-from ui_designer_new import Ui_MainWindow
+from ui_splitter_gui import Ui_MainWindow
 from functions import adjust_volume_and_save, run_additional_function
 from pathlib import Path
 import tempfile
@@ -30,9 +30,6 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # Set the background color using a stylesheet
-        self.setStyleSheet("background-color: #1E1E1E;")
-
         # get license key through API check
         self.ROOT_DIR = Path(__file__).parent
         self.TEXT_FILE = self.ROOT_DIR / 'license.txt'
@@ -44,7 +41,7 @@ class MainWindow(QMainWindow):
         with open('config.json') as config_file:
             self.data = json.load(config_file)
         self.master_output_dir = self.data['exportLocation']
-        self.ui.settingsPg_exp_lbl.setText(self.master_output_dir)       
+        self.ui.settingsPg_exp_lbl.setText(self.master_output_dir)  
 
         # Setup License Page
         self.ui.licensePg_cnf_btn.clicked.connect(self.licenseBtn)
@@ -67,10 +64,15 @@ class MainWindow(QMainWindow):
         self.ui.settingsBtn.clicked.connect(self.go_settings)
         self.ui.settingsPg_exp_btn.clicked.connect(self.export)
         self.ui.settingsPg_ext_btn.clicked.connect(self.exit_settings)
+        self.ui.settingsPg_licens_enter_btn.returnPressed.connect(self.licenseInputTest)
 
         # settings buttons events
         self.ui.settingsBtn.enterEvent = self.set_enter_button
         self.ui.settingsBtn.leaveEvent = self.set_leave_button
+
+        # exit button events
+        self.ui.settingsPg_ext_btn.enterEvent = self.set_ext_enter_button
+        self.ui.settingsPg_ext_btn.leaveEvent = self.set_ext_leave_button
 
         # Disable buttons at the start
         self.ui.importPg_btn_spl.hide()
@@ -80,8 +82,8 @@ class MainWindow(QMainWindow):
         self.ui.importPg_wid_fileDrg.updateStyle(False)
   
     def enter_button(self, event):
-        self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Hover.png')) 
-
+        self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Hover.png'))
+        
     def leave_button(self, event):
         self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Default.png')) 
 
@@ -95,13 +97,25 @@ class MainWindow(QMainWindow):
         self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings_Icon_Hover.png'))
 
     def set_leave_button(self, event):
-        self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings Icon.png'))       
+        self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings Icon.png'))    
+
+    def set_ext_enter_button(self, event):
+        self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Hover.png'))
+
+    def set_ext_leave_button(self, event):
+        self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Default.png'))     
 
     def go_settings(self):
         self.ui.stackedWidget.setCurrentIndex(4)
+        self.ui.settingsPg_exp_btn.show()
+        self.ui.settingsPg_ext_btn.show() 
+        self.ui.settingsBtn.hide()
         self.ui.settingsPg_stp_lbl.setText("Choose main directory to house stems")
 
     def exit_settings(self):
+        self.ui.settingsPg_ext_btn.hide()  
+        self.ui.settingsPg_exp_btn.hide()
+        self.ui.settingsBtn.show() 
         self.ui.stackedWidget.setCurrentIndex(0)
         
     def check_key(self, key):
@@ -133,9 +147,12 @@ class MainWindow(QMainWindow):
 
         if valid:
             self.ui.stackedWidget.setCurrentIndex(0)
+            self.ui.settingsPg_ext_btn.hide()
+            self.ui.settingsPg_exp_btn.hide()  
             return True
         else:
-            self.ui.stackedWidget.setCurrentIndex(3)
+            self.ui.settingsBtn.hide()
+            self.ui.stackedWidget.setCurrentIndex(4)
             return False
 
     def retrieve_dropped_file(self, file_path):
@@ -145,6 +162,14 @@ class MainWindow(QMainWindow):
         self.ui.importPg_btn_imp.hide()
         self.ui.importPg_btn_spl.show()
         self.ui.importPg_btn_spl.setEnabled(True)
+
+    def licenseInputTest(self):
+        text = self.ui.settingsPg_licens_enter_btn.text()
+        if self.check_key(text):
+            self.TEXT_FILE.write_text(text)
+        else:
+            self.ui.settingsPg_licens_enter_btn.clear()
+            self.ui.settingsPg_lic_lbl.setText("Incorrect: Try Again")
 
     def licenseBtn(self):
         if self.check_key(self.ui.licensePg_text.toPlainText()):
@@ -185,8 +210,8 @@ class MainWindow(QMainWindow):
             
         else:
             pass
-            
-        
+
+
     def split(self):
         # First check if master directory still exists
         try:
@@ -257,7 +282,18 @@ class MainWindow(QMainWindow):
         self.ui.importPg_wid_fileDrg.label.setText("Drop a file here!")
         self.ui.stackedWidget.setCurrentIndex(0)
 
-
+    def applyFadeInEffect(button):
+        # Create an animation for the button's opacity
+        animation = QPropertyAnimation(button, b"opacity")
+        # Set the duration of the animation (in milliseconds)
+        animation.setDuration(500)  # Adjust the duration as needed
+        # Set the easing curve for smooth animation
+        animation.setEasingCurve(QEasingCurve.InOutQuad)  # Adjust as needed
+        # Set the starting and ending opacity values
+        animation.setStartValue(0.0)
+        animation.setEndValue(1.0)
+        # Start the animation
+        animation.start()
 if __name__ == "__main__":
 
     # Initialize The App

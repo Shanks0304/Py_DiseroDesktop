@@ -160,7 +160,7 @@ class Spin(QWidget):
         painter.setRenderHint(QPainter.Antialiasing)
 
         for particle in self.particles:
-            color = QColor(116, 80, 219, particle.alpha)
+            color = QColor(107, 95, 182, particle.alpha)
             painter.setPen(QPen(color, 0))
             painter.setBrush(color)
             painter.drawEllipse(particle.position, particle.size, particle.size)

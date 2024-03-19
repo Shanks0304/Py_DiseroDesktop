@@ -12,8 +12,6 @@ class Drag(QWidget):
         self.setAcceptDrops(True)  # Enable drag and drop for this widget
         self.setLayout(QVBoxLayout())
         
-        self.setAutoFillBackground(True)
-        
         self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
         
         # label
@@ -48,8 +46,8 @@ class Drag(QWidget):
         bgColor = "#333333" if hovered else "#1E1E1E"
         self.setStyleSheet(f"""
             QLabel {{
-                border: 2px dashed #AAAAAA;
-                border-radius: 20px;
+                border: 2px dashed #565656;
+                border-radius: 57px;
                 background-color: {bgColor};
             }}
         """)

@@ -32,24 +32,24 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>100</y>
-      <width>801</width>
-      <height>541</height>
+      <x>0</x>
+      <y>0</y>
+      <width>900</width>
+      <height>750</height>
      </rect>
     </property>
     <property name="mouseTracking">
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="importPg">
      <widget class="QLabel" name="importPg_lbl">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>450</y>
+        <x>330</x>
+        <y>640</y>
         <width>261</width>
         <height>81</height>
        </rect>
@@ -59,6 +59,9 @@
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);</string>
       </property>
       <property name="text">
        <string>Step 1: Drag and Drop File</string>
@@ -70,23 +73,36 @@
      <widget class="Drag" name="importPg_wid_fileDrg" native="true">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>60</y>
-        <width>581</width>
-        <height>371</height>
+        <x>181</x>
+        <y>185</y>
+        <width>538</width>
+        <height>380</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>538</width>
+        <height>380</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>538</width>
+        <height>380</height>
+       </size>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">border: 2.1px dashed #565656;
+border-radius: 57px;</string>
       </property>
       <widget class="QPushButton" name="importPg_btn_spl">
        <property name="geometry">
         <rect>
-         <x>180</x>
-         <y>260</y>
+         <x>140</x>
+         <y>290</y>
          <width>251</width>
          <height>71</height>
         </rect>
@@ -118,8 +134,8 @@ background-color: transparent;</string>
       <widget class="QPushButton" name="importPg_btn_imp">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>260</y>
+         <x>130</x>
+         <y>290</y>
          <width>271</width>
          <height>71</height>
         </rect>
@@ -152,11 +168,17 @@ background-color: transparent;</string>
      <widget class="QLabel" name="filesLogo">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>150</y>
-        <width>151</width>
-        <height>141</height>
+        <x>400</x>
+        <y>300</y>
+        <width>150</width>
+        <height>150</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(0, 0, 0, 0); /* Set background color to transparent */
@@ -179,8 +201,8 @@ border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>781</width>
-        <height>581</height>
+        <width>900</width>
+        <height>750</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -248,19 +270,17 @@ border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust
      <widget class="QLabel" name="licensePg_lb">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>120</y>
-        <width>538</width>
-        <height>380</height>
+        <x>280</x>
+        <y>300</y>
+        <width>251</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(86, 86, 86);
-border: 2px dashed #6B5FB6;
-border-radius: 57px;</string>
+       <string notr="true">background-color: rgb(86, 86, 86);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>License Entry Page</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -269,11 +289,14 @@ border-radius: 57px;</string>
      <widget class="QTextEdit" name="licensePg_text">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>0</y>
+        <x>300</x>
+        <y>220</y>
         <width>211</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);</string>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -286,11 +309,14 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="licensePg_cnf_btn">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>20</y>
+        <x>530</x>
+        <y>240</y>
         <width>75</width>
         <height>23</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);</string>
       </property>
       <property name="text">
        <string>Confirm</string>
@@ -298,40 +324,35 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
     <widget class="QWidget" name="settingsPg">
-     <widget class="QPushButton" name="settingsPg_exp_btn">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>220</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Export</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="settingsPg_exp_lbl">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>220</y>
-        <width>181</width>
-        <height>16</height>
+        <x>148</x>
+        <y>468</y>
+        <width>604</width>
+        <height>55</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);
+border: none;
+border-radius: 15px;</string>
+      </property>
       <property name="text">
-       <string>export location</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="settingsPg_stp_lbl">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>280</y>
-        <width>321</width>
-        <height>161</height>
+        <x>360</x>
+        <y>560</y>
+        <width>211</width>
+        <height>131</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);</string>
       </property>
       <property name="text">
        <string>Settings Page</string>
@@ -340,17 +361,67 @@ p, li { white-space: pre-wrap; }
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QToolButton" name="settingsPg_ext_btn">
+     <widget class="QLineEdit" name="settingsPg_licens_enter_btn">
       <property name="geometry">
        <rect>
-        <x>620</x>
-        <y>70</y>
-        <width>61</width>
+        <x>148</x>
+        <y>265</y>
+        <width>604</width>
+        <height>55</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(86, 86, 86);
+border: none;
+border-radius: 15px;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settingsPg_lic_lbl">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>230</y>
+        <width>371</width>
         <height>31</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(95, 95, 95);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: bold; /* Set to bold */
+font-style: italic; /* Set to italic */
+background-color: transparent;</string>
+      </property>
       <property name="text">
-       <string>X</string>
+       <string>Please enter your license:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="settingsPg_exp_head_lbl">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>440</y>
+        <width>451</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(95, 95, 95);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: bold; /* Set to bold */
+font-style: italic; /* Set to italic */
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>Please enter a default export folder:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -358,11 +429,14 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="settingsBtn">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>10</y>
-      <width>61</width>
-      <height>51</height>
+      <x>827</x>
+      <y>25</y>
+      <width>48</width>
+      <height>48</height>
      </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">border: none;
@@ -383,6 +457,78 @@ background-color: transparent;</string>
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="settingsPg_ext_btn">
+    <property name="geometry">
+     <rect>
+      <x>827</x>
+      <y>25</y>
+      <width>48</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resource.qrc">
+      <normaloff>:/icons/Splitter_GUI_Assets_3/Exit Icon Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Exit Icon Default.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="settingsPg_exp_btn">
+    <property name="geometry">
+     <rect>
+      <x>705</x>
+      <y>476</y>
+      <width>39</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>39</width>
+      <height>39</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>39</width>
+      <height>39</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resource.qrc">
+      <normaloff>:/icons/Splitter_GUI_Assets_3/Dots_Icon.png</normaloff>:/icons/Splitter_GUI_Assets_3/Dots_Icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>39</width>
+      <height>39</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
