@@ -43,9 +43,6 @@ class MainWindow(QMainWindow):
         self.master_output_dir = self.data['exportLocation']
         self.ui.settingsPg_exp_lbl.setText(self.master_output_dir)  
 
-        # Setup License Page
-        self.ui.licensePg_cnf_btn.clicked.connect(self.licenseBtn)
-
         # import buttons
         self.ui.importPg_btn_imp.clicked.connect(self.importBtn)
         self.ui.importPg_btn_spl.clicked.connect(self.split)
@@ -144,18 +141,23 @@ class MainWindow(QMainWindow):
 
         if valid:
             self.ui.stackedWidget.setCurrentIndex(0)
+            self.ui.settingsBtn.show()
             self.ui.importPg_file_lbl.hide()
             self.ui.settingsPg_ext_btn.hide()
-            self.ui.settingsPg_exp_btn.hide()  
+            self.ui.settingsPg_exp_btn.hide()
+            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
+            self.ui.settingsPg_lic_lbl.setText("LICENSE KEY ALREADY VERIFIED")  
             return True
         else:
             self.ui.settingsBtn.hide()
+            self.ui.settingsPg_ext_btn.hide()
             self.ui.stackedWidget.setCurrentIndex(4)
+            self.ui.settingsPg_licens_enter_btn.setEnabled(True) 
             return False
 
     def retrieve_dropped_file(self, file_path):
         self.file_path = file_path
-        self.ui.importPg_wid_fileDrg.label.setText(f"FILE DROPPED:")
+        self.ui.importPg_top_lbl.setText(f"FILE DROPPED:")
         self.ui.importPg_file_lbl.setText(os.path.basename(self.ui.importPg_wid_fileDrg.file_path))
         # Access the dropped file path from the promoted widget
         self.ui.importPg_btn_imp.hide()
@@ -168,21 +170,10 @@ class MainWindow(QMainWindow):
         text = self.ui.settingsPg_licens_enter_btn.text()
         if self.check_key(text):
             self.TEXT_FILE.write_text(text)
+            self.ui.settingsPg_licens_enter_btn.clear()
         else:
             self.ui.settingsPg_licens_enter_btn.clear()
             self.ui.settingsPg_lic_lbl.setText("Incorrect: Try Again")
-
-    def licenseBtn(self):
-        if self.check_key(self.ui.licensePg_text.toPlainText()):
-            self.TEXT_FILE.write_text(self.ui.licensePg_text.toPlainText())
-            if self.master_output_dir == None:
-                self.ui.stackedWidget.setCurrentIndex(4)
-                self.ui.settingsPg_ext_btn.setEnabled(False)
-                self.ui.settingsPg_stp_lbl.setText("Choose main directory to house stems")
-            else:
-                self.ui.stackedWidget.setCurrentIndex(0)
-        else:
-            self.ui.licensePg_lb.setText("invalid key, try again loser")   
 
     def export(self):
         # Open File Dialog
@@ -204,7 +195,7 @@ class MainWindow(QMainWindow):
         if self.file_path:
             print(self.file_path)
             self.ui.importPg_wid_fileDrg.file_path = self.file_path
-            self.ui.importPg_wid_fileDrg.label.setText(f"FILE DROPPED:")
+            self.ui.importPg_top_lbl.setText(f"FILE DROPPED:")
             self.ui.importPg_file_lbl.setText(os.path.basename(self.ui.importPg_wid_fileDrg.file_path))
             self.ui.importPg_btn_imp.hide()
             self.ui.importPg_btn_spl.show()
@@ -219,11 +210,11 @@ class MainWindow(QMainWindow):
         # First check if master directory still exists
         try:
             if not os.path.exists(self.master_output_dir):
-                self.ui.importPg_lbl.setText("Export Directory does not exist, please choose another one in the settings")
+                self.ui.importPg_top_lbl.setText("Export Directory does not exist, please choose another one in the settings")
                 return
 
         except TypeError:
-            self.ui.importPg_lbl.setText("Export Directory does not exist, please choose another one in the settings")
+            self.ui.importPg_top_lbl.setText("Export Directory does not exist, please choose another one in the settings")
             return
         
         # Create temporary directories
@@ -243,7 +234,7 @@ class MainWindow(QMainWindow):
             self.ui.importPg_lbl.setText("File Exists Error")
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_btn_spl.hide()
-            self.ui.importPg_wid_fileDrg.label.setText("Drop a file here!")
+            self.ui.importPg_wid_fileDrg.label.setText("DROP YOUR REFERENCE FILE HERE")
             return
         else:
             print("no error occurred")
@@ -274,7 +265,7 @@ class MainWindow(QMainWindow):
         print("Next function started")
         run_additional_function(self.input_file_name, self.input_file, self.temp_dir_path, self.final_output_dir)
         self.ui.settingsBtn.setEnabled(True)
-        self.ui.importPg_wid_fileDrg.label.setText("SPLITTING COMPLETE! DROP ANOTHER FILE?")
+        self.ui.importPg_top_lbl.setText("SPLITTING COMPLETE! DROP ANOTHER FILE?")
         self.ui.stackedWidget.setCurrentIndex(0)
         self.ui.settingsBtn.show() 
         self.ui.importPg_btn_spl.hide()

@@ -113,6 +113,30 @@
         <pixmap resource="resource.qrc">:/icons/Splitter_GUI_Assets_3/Rectangle Default.png</pixmap>
        </property>
       </widget>
+      <widget class="QLabel" name="importPg_top_lbl">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>501</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(95, 95, 95);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: bold; /* Set to bold */
+font-style: italic; /* Set to italic */
+background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string>DROP YOUR REFERENCE FILE HERE</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="importPg_btn_spl">
       <property name="geometry">

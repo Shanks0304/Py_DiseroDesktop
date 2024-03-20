@@ -12,24 +12,7 @@ class Drag(QWidget):
         self.setAcceptDrops(True)  # Enable drag and drop for this widget
         self.setLayout(QVBoxLayout())
         
-        self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
-        
-        # label
-        self.label = QLabel("DROP YOUR REFERENCE FILE HERE")
-        self.palette = self.label.palette()
-        self.palette.setColor(self.label.foregroundRole(), QColor(86, 86, 86))
-        self.label.setPalette(self.palette)
-        self.label.setAlignment(Qt.AlignHCenter)
-
-        # Set font
-        font = QFont('Source Sans Pro', 15)
-        font.setBold(True)
-        font.setItalic(True)
-        self.label.setFont(font)
-
-        self.label.setStyleSheet("padding-top: 30px;")
-        self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
-        self.layout().addWidget(self.label)
+        self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow      
 
     def dragEnterEvent(self, event: QDragEnterEvent):
         if event.mimeData().hasUrls():
@@ -52,7 +35,6 @@ class Drag(QWidget):
         bgColor = "#292929" if hovered else "#1E1E1E"
         self.setStyleSheet(f"""
             QLabel {{
-                
                 border-radius: 57px;
                 background-color: {bgColor};
             }}
