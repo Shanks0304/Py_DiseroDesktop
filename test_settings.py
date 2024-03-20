@@ -35,7 +35,21 @@ class MainWindow(QMainWindow):
         self.TEXT_FILE = self.ROOT_DIR / 'license.txt'
         self.key = self.TEXT_FILE.read_text()
         os.environ['KEYGEN_ACCOUNT_ID'] = '0f5dc36e-048c-4f0a-9424-eff14d0ae5bb'
-        self.check_key(self.key)
+
+        # check key
+        if self.check_key(self.key):
+            self.ui.stackedWidget.setCurrentIndex(0)
+            self.ui.settingsBtn.show()
+            self.ui.settingsPg_ext_btn.hide()
+            self.ui.settingsPg_exp_btn.hide()
+            self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
+            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
+        else:
+            self.ui.settingsBtn.hide()
+            self.ui.settingsPg_ext_btn.hide()
+            self.ui.stackedWidget.setCurrentIndex(4)
+            self.ui.settingsPg_licens_enter_btn.setEnabled(True) 
+
 
         # Load the user settings
         with open('config.json') as config_file:
@@ -140,19 +154,8 @@ class MainWindow(QMainWindow):
         valid = validation["meta"]["valid"]
 
         if valid:
-            self.ui.stackedWidget.setCurrentIndex(0)
-            self.ui.settingsBtn.show()
-            self.ui.importPg_file_lbl.hide()
-            self.ui.settingsPg_ext_btn.hide()
-            self.ui.settingsPg_exp_btn.hide()
-            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
-            self.ui.settingsPg_lic_lbl.setText("LICENSE KEY ALREADY VERIFIED")  
             return True
         else:
-            self.ui.settingsBtn.hide()
-            self.ui.settingsPg_ext_btn.hide()
-            self.ui.stackedWidget.setCurrentIndex(4)
-            self.ui.settingsPg_licens_enter_btn.setEnabled(True) 
             return False
 
     def retrieve_dropped_file(self, file_path):
@@ -171,6 +174,8 @@ class MainWindow(QMainWindow):
         if self.check_key(text):
             self.TEXT_FILE.write_text(text)
             self.ui.settingsPg_licens_enter_btn.clear()
+            self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
+            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
         else:
             self.ui.settingsPg_licens_enter_btn.clear()
             self.ui.settingsPg_lic_lbl.setText("Incorrect: Try Again")
@@ -180,6 +185,7 @@ class MainWindow(QMainWindow):
         while True:
             master_output_dir = QFileDialog.getExistingDirectory(self, "Open File", "")
             if master_output_dir:
+                self.ui.settingsPg_ext_btn.show()
                 self.master_output_dir = master_output_dir
                 self.data['exportLocation'] = self.master_output_dir
                 self.ui.settingsPg_exp_lbl.setText(self.master_output_dir)
@@ -234,14 +240,10 @@ class MainWindow(QMainWindow):
             self.ui.importPg_lbl.setText("File Exists Error")
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_btn_spl.hide()
-            self.ui.importPg_wid_fileDrg.label.setText("DROP YOUR REFERENCE FILE HERE")
+            self.ui.importPg_top_lbl.setText("DROP YOUR REFERENCE FILE HERE")
             return
         else:
-            print("no error occurred")
-        '''
-        if os.path.exists(self.final_output_dir):
-            self.ui.settingsPg_stp_lbl.setText("Folder Exists Please Try Again")
-        '''    
+            print("no error occurred") 
         
         self.ui.settingsBtn.setEnabled(False)
         self.ui.stackedWidget.setCurrentIndex(1)

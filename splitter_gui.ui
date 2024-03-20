@@ -250,7 +250,7 @@ font-weight: 600; /* Set to bold */
 background-color: transparent;</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

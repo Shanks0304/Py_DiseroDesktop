@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guiHPyRdX.ui'
+## Form generated from reading UI file 'splitter_guiQfVKOX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -239,7 +239,7 @@ class Ui_MainWindow(object):
         self.importPg_btn_spl.setText("")
         self.importPg_btn_imp.setText("")
         self.filesLogo.setText("")
-        self.importPg_file_lbl.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.importPg_file_lbl.setText("")
         self.donePg_lbl2.setText(QCoreApplication.translate("MainWindow", u"Step 4: Process Completed", None))
         self.donePg_lbl.setText(QCoreApplication.translate("MainWindow", u"Congrats or something", None))
         self.donePg_btn_newSplt.setText(QCoreApplication.translate("MainWindow", u"Split new thing", None))
