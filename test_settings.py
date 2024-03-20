@@ -158,11 +158,14 @@ class MainWindow(QMainWindow):
 
     def retrieve_dropped_file(self, file_path):
         self.file_path = file_path
-        self.ui.importPg_wid_fileDrg.label.setText(f"File dropped: {os.path.basename(self.ui.importPg_wid_fileDrg.file_path)}")
+        self.ui.importPg_wid_fileDrg.label.setText(f"FILE DROPPED:")
+        self.ui.importPg_file_lbl.setText(os.path.basename(self.ui.importPg_wid_fileDrg.file_path))
         # Access the dropped file path from the promoted widget
         self.ui.importPg_btn_imp.hide()
         self.ui.importPg_btn_spl.show()
         self.ui.importPg_btn_spl.setEnabled(True)
+        self.ui.importPg_file_lbl.show()
+        self.ui.filesLogo.hide()
 
     def licenseInputTest(self):
         text = self.ui.settingsPg_licens_enter_btn.text()
@@ -227,7 +230,6 @@ class MainWindow(QMainWindow):
             self.ui.importPg_lbl.setText("Export Directory does not exist, please choose another one in the settings")
             return
         
-
         # Create temporary directories
         self.input_file = Path(self.ui.importPg_wid_fileDrg.file_path)
         self.input_file_name = self.input_file.stem
@@ -255,7 +257,8 @@ class MainWindow(QMainWindow):
         '''    
         
         self.ui.settingsBtn.setEnabled(False)
-        self.ui.stackedWidget.setCurrentIndex(1) 
+        self.ui.stackedWidget.setCurrentIndex(1)
+        self.ui.settingsBtn.hide() 
         self.temp_dir_path = Path(tempfile.mkdtemp(dir=self.final_output_dir))
         self.temp_input_file = self.temp_dir_path / f"{self.input_file_name}_temp.wav"
         adjust_volume_and_save(self.input_file, -10, self.temp_input_file)
@@ -276,7 +279,8 @@ class MainWindow(QMainWindow):
         run_additional_function(self.input_file_name, self.input_file, self.temp_dir_path, self.final_output_dir)
         self.ui.settingsBtn.setEnabled(True)
         self.ui.importPg_wid_fileDrg.label.setText("SPLITTING COMPLETE! DROP ANOTHER FILE?")
-        self.ui.stackedWidget.setCurrentIndex(0) 
+        self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.settingsBtn.show() 
         self.ui.importPg_btn_spl.hide()
         self.ui.importPg_btn_imp.show()
         self.ui.importPg_file_lbl.hide()
