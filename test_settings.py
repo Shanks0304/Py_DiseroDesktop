@@ -56,9 +56,6 @@ class MainWindow(QMainWindow):
         self.ui.importPg_btn_imp.leaveEvent = self.leave_button
         self.ui.importPg_btn_spl.enterEvent = self.spl_enter_button
         self.ui.importPg_btn_spl.leaveEvent = self.spl_leave_button
-        
-        # done buttons
-        self.ui.donePg_btn_newSplt.clicked.connect(self.newSplit)
 
         # settings buttons
         self.ui.settingsBtn.clicked.connect(self.go_settings)
@@ -218,7 +215,6 @@ class MainWindow(QMainWindow):
         else:
             pass
 
-
     def split(self):
         # First check if master directory still exists
         try:
@@ -285,26 +281,7 @@ class MainWindow(QMainWindow):
         self.ui.importPg_btn_imp.show()
         self.ui.importPg_file_lbl.hide()
         self.ui.filesLogo.show()
-    
-    def newSplit(self):
-        self.ui.importPg_btn_spl.setEnabled(False)
-        self.ui.importPg_btn_spl.hide()
-        self.ui.importPg_wid_fileDrg.file_path = None
-        self.ui.importPg_wid_fileDrg.label.setText("Drop a file here!")
-        self.ui.stackedWidget.setCurrentIndex(0)
 
-    def applyFadeInEffect(button):
-        # Create an animation for the button's opacity
-        animation = QPropertyAnimation(button, b"opacity")
-        # Set the duration of the animation (in milliseconds)
-        animation.setDuration(500)  # Adjust the duration as needed
-        # Set the easing curve for smooth animation
-        animation.setEasingCurve(QEasingCurve.InOutQuad)  # Adjust as needed
-        # Set the starting and ending opacity values
-        animation.setStartValue(0.0)
-        animation.setEndValue(1.0)
-        # Start the animation
-        animation.start()
 if __name__ == "__main__":
 
     # Initialize The App

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guipaHvIu.ui'
+## Form generated from reading UI file 'splitter_guiPaVYhM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -47,6 +47,10 @@ class Ui_MainWindow(object):
         self.importPg_wid_fileDrg.setMaximumSize(QSize(538, 380))
         self.importPg_wid_fileDrg.setAutoFillBackground(False)
         self.importPg_wid_fileDrg.setStyleSheet(u"")
+        self.importPg_dot_lbl = QLabel(self.importPg_wid_fileDrg)
+        self.importPg_dot_lbl.setObjectName(u"importPg_dot_lbl")
+        self.importPg_dot_lbl.setGeometry(QRect(0, 0, 538, 380))
+        self.importPg_dot_lbl.setPixmap(QPixmap(u":/icons/Splitter_GUI_Assets_3/Rectangle Default.png"))
         self.importPg_btn_spl = QPushButton(self.importPg)
         self.importPg_btn_spl.setObjectName(u"importPg_btn_spl")
         self.importPg_btn_spl.setGeometry(QRect(344, 464, 211, 60))
@@ -220,6 +224,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.importPg_lbl.setText(QCoreApplication.translate("MainWindow", u"Step 1: Drag and Drop File", None))
+        self.importPg_dot_lbl.setText("")
         self.importPg_btn_spl.setText("")
         self.importPg_btn_imp.setText("")
         self.filesLogo.setText("")

@@ -97,6 +97,22 @@
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+      <widget class="QLabel" name="importPg_dot_lbl">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>538</width>
+         <height>380</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resource.qrc">:/icons/Splitter_GUI_Assets_3/Rectangle Default.png</pixmap>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="importPg_btn_spl">
       <property name="geometry">

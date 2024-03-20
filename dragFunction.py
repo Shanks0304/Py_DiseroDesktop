@@ -52,7 +52,7 @@ class Drag(QWidget):
         bgColor = "#292929" if hovered else "#1E1E1E"
         self.setStyleSheet(f"""
             QLabel {{
-                border: 2px dashed #565656;
+                
                 border-radius: 57px;
                 background-color: {bgColor};
             }}
