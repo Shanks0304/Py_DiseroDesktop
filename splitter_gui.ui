@@ -95,83 +95,82 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 2.1px dashed #565656;
-border-radius: 57px;</string>
+       <string notr="true"/>
       </property>
-      <widget class="QPushButton" name="importPg_btn_spl">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>290</y>
-         <width>251</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none;
+     </widget>
+     <widget class="QPushButton" name="importPg_btn_spl">
+      <property name="geometry">
+       <rect>
+        <x>344</x>
+        <y>464</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
 background-color: transparent;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="resource.qrc">
-         <normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>300</width>
-         <height>101</height>
-        </size>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="importPg_btn_imp">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>290</y>
-         <width>271</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none;
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>211</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="importPg_btn_imp">
+      <property name="geometry">
+       <rect>
+        <x>326</x>
+        <y>464</y>
+        <width>248</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
 background-color: transparent;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="resource.qrc">
-         <normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>300</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
-      </widget>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>248</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="filesLogo">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>300</y>
-        <width>150</width>
-        <height>150</height>
+        <x>373</x>
+        <y>279</y>
+        <width>154</width>
+        <height>154</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -192,6 +191,29 @@ border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="importPg_file_lbl">
+      <property name="geometry">
+       <rect>
+        <x>189</x>
+        <y>347</y>
+        <width>521</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(95, 95, 95);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: 600; /* Set to bold */
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

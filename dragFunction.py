@@ -15,13 +15,19 @@ class Drag(QWidget):
         self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
         
         # label
-        self.label = QLabel("Drop a file here!")
+        self.label = QLabel("DROP YOUR REFERENCE FILE HERE")
         self.palette = self.label.palette()
         self.palette.setColor(self.label.foregroundRole(), QColor(86, 86, 86))
         self.label.setPalette(self.palette)
         self.label.setAlignment(Qt.AlignHCenter)
-        self.label.setFont(QFont('Source Sans Pro', 18))
-        self.label.setStyleSheet("padding-top: 20px;")
+
+        # Set font
+        font = QFont('Source Sans Pro', 15)
+        font.setBold(True)
+        font.setItalic(True)
+        self.label.setFont(font)
+
+        self.label.setStyleSheet("padding-top: 30px;")
         self.setGraphicsEffect(self.createShadow(0))  # Soft drop shadow 
         self.layout().addWidget(self.label)
 

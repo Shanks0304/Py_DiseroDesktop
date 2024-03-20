@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guiDNaqAp.ui'
+## Form generated from reading UI file 'splitter_guipaHvIu.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -46,38 +46,46 @@ class Ui_MainWindow(object):
         self.importPg_wid_fileDrg.setMinimumSize(QSize(538, 380))
         self.importPg_wid_fileDrg.setMaximumSize(QSize(538, 380))
         self.importPg_wid_fileDrg.setAutoFillBackground(False)
-        self.importPg_wid_fileDrg.setStyleSheet(u"border: 2.1px dashed #565656;\n"
-"border-radius: 57px;")
-        self.importPg_btn_spl = QPushButton(self.importPg_wid_fileDrg)
+        self.importPg_wid_fileDrg.setStyleSheet(u"")
+        self.importPg_btn_spl = QPushButton(self.importPg)
         self.importPg_btn_spl.setObjectName(u"importPg_btn_spl")
-        self.importPg_btn_spl.setGeometry(QRect(140, 290, 251, 71))
+        self.importPg_btn_spl.setGeometry(QRect(344, 464, 211, 60))
         self.importPg_btn_spl.setMouseTracking(True)
         self.importPg_btn_spl.setStyleSheet(u"border: none;\n"
 "background-color: transparent;")
         icon = QIcon()
         icon.addFile(u":/icons/Splitter_GUI_Assets_3/Split Button Default.png", QSize(), QIcon.Normal, QIcon.Off)
         self.importPg_btn_spl.setIcon(icon)
-        self.importPg_btn_spl.setIconSize(QSize(300, 101))
+        self.importPg_btn_spl.setIconSize(QSize(211, 60))
         self.importPg_btn_spl.setFlat(True)
-        self.importPg_btn_imp = QPushButton(self.importPg_wid_fileDrg)
+        self.importPg_btn_imp = QPushButton(self.importPg)
         self.importPg_btn_imp.setObjectName(u"importPg_btn_imp")
-        self.importPg_btn_imp.setGeometry(QRect(130, 290, 271, 71))
+        self.importPg_btn_imp.setGeometry(QRect(326, 464, 248, 60))
         self.importPg_btn_imp.setMouseTracking(True)
         self.importPg_btn_imp.setStyleSheet(u"border: none;\n"
 "background-color: transparent;")
         icon1 = QIcon()
         icon1.addFile(u":/icons/Splitter_GUI_Assets_3/Browse Button Default.png", QSize(), QIcon.Normal, QIcon.Off)
         self.importPg_btn_imp.setIcon(icon1)
-        self.importPg_btn_imp.setIconSize(QSize(300, 100))
+        self.importPg_btn_imp.setIconSize(QSize(248, 60))
         self.importPg_btn_imp.setFlat(True)
         self.filesLogo = QLabel(self.importPg)
         self.filesLogo.setObjectName(u"filesLogo")
-        self.filesLogo.setGeometry(QRect(400, 300, 150, 150))
+        self.filesLogo.setGeometry(QRect(373, 279, 154, 154))
         self.filesLogo.setMaximumSize(QSize(16777215, 16777215))
         self.filesLogo.setStyleSheet(u"background-color: rgba(0, 0, 0, 0); /* Set background color to transparent */\n"
 "border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust path to your image and border size */")
         self.filesLogo.setPixmap(QPixmap(u":/icons/Splitter_GUI_Assets_3/File Drop Icon.png"))
         self.filesLogo.setScaledContents(True)
+        self.importPg_file_lbl = QLabel(self.importPg)
+        self.importPg_file_lbl.setObjectName(u"importPg_file_lbl")
+        self.importPg_file_lbl.setGeometry(QRect(189, 347, 521, 31))
+        self.importPg_file_lbl.setStyleSheet(u"color: rgb(95, 95, 95);\n"
+"font-family: \"Source Sans Pro\";\n"
+"font-size: 15pt; /* Adjust the font size as needed */\n"
+"font-weight: 600; /* Set to bold */\n"
+"background-color: transparent;")
+        self.importPg_file_lbl.setAlignment(Qt.AlignCenter)
         self.stackedWidget.addWidget(self.importPg)
         self.splitPg = QWidget()
         self.splitPg.setObjectName(u"splitPg")
@@ -215,6 +223,7 @@ class Ui_MainWindow(object):
         self.importPg_btn_spl.setText("")
         self.importPg_btn_imp.setText("")
         self.filesLogo.setText("")
+        self.importPg_file_lbl.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.donePg_lbl2.setText(QCoreApplication.translate("MainWindow", u"Step 4: Process Completed", None))
         self.donePg_lbl.setText(QCoreApplication.translate("MainWindow", u"Congrats or something", None))
         self.donePg_btn_newSplt.setText(QCoreApplication.translate("MainWindow", u"Split new thing", None))

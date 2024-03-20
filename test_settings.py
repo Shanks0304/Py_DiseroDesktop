@@ -147,6 +147,7 @@ class MainWindow(QMainWindow):
 
         if valid:
             self.ui.stackedWidget.setCurrentIndex(0)
+            self.ui.importPg_file_lbl.hide()
             self.ui.settingsPg_ext_btn.hide()
             self.ui.settingsPg_exp_btn.hide()  
             return True
@@ -203,10 +204,13 @@ class MainWindow(QMainWindow):
         if self.file_path:
             print(self.file_path)
             self.ui.importPg_wid_fileDrg.file_path = self.file_path
-            self.ui.importPg_wid_fileDrg.label.setText(f"File dropped: {os.path.basename(self.ui.importPg_wid_fileDrg.file_path)}")
+            self.ui.importPg_wid_fileDrg.label.setText(f"FILE DROPPED:")
+            self.ui.importPg_file_lbl.setText(os.path.basename(self.ui.importPg_wid_fileDrg.file_path))
             self.ui.importPg_btn_imp.hide()
             self.ui.importPg_btn_spl.show()
             self.ui.importPg_btn_spl.setEnabled(True)
+            self.ui.importPg_file_lbl.show()
+            self.ui.filesLogo.hide()
             
         else:
             pass
@@ -223,6 +227,7 @@ class MainWindow(QMainWindow):
             self.ui.importPg_lbl.setText("Export Directory does not exist, please choose another one in the settings")
             return
         
+
         # Create temporary directories
         self.input_file = Path(self.ui.importPg_wid_fileDrg.file_path)
         self.input_file_name = self.input_file.stem
@@ -274,6 +279,8 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(0) 
         self.ui.importPg_btn_spl.hide()
         self.ui.importPg_btn_imp.show()
+        self.ui.importPg_file_lbl.hide()
+        self.ui.filesLogo.show()
     
     def newSplit(self):
         self.ui.importPg_btn_spl.setEnabled(False)
