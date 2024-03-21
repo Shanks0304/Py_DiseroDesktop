@@ -129,7 +129,6 @@ class MainWindow(QMainWindow):
         self.ui.settingsPg_exp_btn.show()
         self.ui.settingsPg_ext_btn.show() 
         self.ui.settingsBtn.hide()
-        self.ui.settingsPg_stp_lbl.setText("Choose main directory to house stems")
 
     def exit_settings(self):
         self.ui.settingsPg_ext_btn.hide()  
@@ -244,14 +243,14 @@ class MainWindow(QMainWindow):
         try:
             os.makedirs(self.final_output_dir)
         except FileExistsError:
-            print("File exists already")
             error_occurred = True
 
         if error_occurred:
-            self.ui.importPg_lbl.setText("File Exists Error")
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_btn_spl.hide()
-            self.ui.importPg_top_lbl.setText("DROP YOUR REFERENCE FILE HERE")
+            self.ui.filesLogo.show()
+            self.ui.importPg_file_lbl.hide()
+            self.ui.importPg_top_lbl.setText("FOLDER WITH SONG NAME EXISTS")
             return
         else:
             print("no error occurred") 

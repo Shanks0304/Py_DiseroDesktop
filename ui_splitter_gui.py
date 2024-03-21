@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guiifSboB.ui'
+## Form generated from reading UI file 'splitter_guiMMDRGz.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -33,13 +33,6 @@ class Ui_MainWindow(object):
         self.stackedWidget.setMouseTracking(False)
         self.importPg = QWidget()
         self.importPg.setObjectName(u"importPg")
-        self.importPg_lbl = QLabel(self.importPg)
-        self.importPg_lbl.setObjectName(u"importPg_lbl")
-        self.importPg_lbl.setGeometry(QRect(330, 640, 261, 81))
-        self.importPg_lbl.setLayoutDirection(Qt.LeftToRight)
-        self.importPg_lbl.setAutoFillBackground(False)
-        self.importPg_lbl.setStyleSheet(u"background-color: rgb(86, 86, 86);")
-        self.importPg_lbl.setAlignment(Qt.AlignCenter)
         self.importPg_wid_fileDrg = Drag(self.importPg)
         self.importPg_wid_fileDrg.setObjectName(u"importPg_wid_fileDrg")
         self.importPg_wid_fileDrg.setGeometry(QRect(181, 185, 538, 380))
@@ -154,11 +147,6 @@ class Ui_MainWindow(object):
 "font-size: 15pt; /* Adjust the font size as needed */\n"
 "font-weight: bold; /* Set to bold */\n"
 "padding-left: 10px;")
-        self.settingsPg_stp_lbl = QLabel(self.settingsPg)
-        self.settingsPg_stp_lbl.setObjectName(u"settingsPg_stp_lbl")
-        self.settingsPg_stp_lbl.setGeometry(QRect(360, 560, 211, 131))
-        self.settingsPg_stp_lbl.setStyleSheet(u"background-color: rgb(86, 86, 86);")
-        self.settingsPg_stp_lbl.setAlignment(Qt.AlignCenter)
         self.settingsPg_licens_enter_btn = QLineEdit(self.settingsPg)
         self.settingsPg_licens_enter_btn.setObjectName(u"settingsPg_licens_enter_btn")
         self.settingsPg_licens_enter_btn.setGeometry(QRect(148, 265, 604, 55))
@@ -235,7 +223,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -243,7 +231,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.importPg_lbl.setText(QCoreApplication.translate("MainWindow", u"Step 1: Drag and Drop File", None))
         self.importPg_dot_lbl.setText("")
         self.importPg_top_lbl.setText(QCoreApplication.translate("MainWindow", u"DROP YOUR REFERENCE FILE HERE", None))
         self.importPg_btn_spl.setText("")
@@ -261,7 +248,6 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Enter License Code Here</p></body></html>", None))
         self.licensePg_cnf_btn.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
         self.settingsPg_exp_lbl.setText("")
-        self.settingsPg_stp_lbl.setText(QCoreApplication.translate("MainWindow", u"Settings Page", None))
         self.settingsPg_licens_enter_btn.setText("")
         self.settingsPg_lic_lbl.setText(QCoreApplication.translate("MainWindow", u"Please enter your license:", None))
         self.settingsPg_exp_head_lbl.setText(QCoreApplication.translate("MainWindow", u"Please enter a default export folder:", None))

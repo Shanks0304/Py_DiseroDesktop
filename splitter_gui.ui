@@ -42,34 +42,9 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="importPg">
-     <widget class="QLabel" name="importPg_lbl">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>640</y>
-        <width>261</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(86, 86, 86);</string>
-      </property>
-      <property name="text">
-       <string>Step 1: Drag and Drop File</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <widget class="Drag" name="importPg_wid_fileDrg" native="true">
       <property name="geometry">
        <rect>
@@ -407,25 +382,6 @@ padding-left: 10px;</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="settingsPg_stp_lbl">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>560</y>
-        <width>211</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(86, 86, 86);</string>
-      </property>
-      <property name="text">
-       <string>Settings Page</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="settingsPg_licens_enter_btn">
