@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="icons">
+    <file>Splitter_GUI_Assets_3/Settings_Icon_Hover 2.png</file>
+    <file>Splitter_GUI_Assets_3/Browse Button Default 2.png</file>
+    <file>Splitter_GUI_Assets_3/Browse Button Hover 2.png</file>
+    <file>Splitter_GUI_Assets_3/Split Button 2 Default.png</file>
+    <file>Splitter_GUI_Assets_3/Split Button 2 Hover.png</file>
     <file>Splitter_GUI_Assets_3/Dots_Icon.png</file>
     <file>Splitter_GUI_Assets_3/export folder bar.png</file>
     <file>Splitter_GUI_Assets_3/license bar.png</file>

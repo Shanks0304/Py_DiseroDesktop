@@ -36,6 +36,9 @@ class MainWindow(QMainWindow):
         self.key = self.TEXT_FILE.read_text()
         os.environ['KEYGEN_ACCOUNT_ID'] = '0f5dc36e-048c-4f0a-9424-eff14d0ae5bb'
 
+        # create directory for pngs
+        self.icons_path = os.path.join(self.ROOT_DIR, 'Splitter_GUI_Assets_3')
+
         # check key
         if self.check_key(self.key):
             self.ui.stackedWidget.setCurrentIndex(0)
@@ -90,28 +93,36 @@ class MainWindow(QMainWindow):
         self.ui.importPg_wid_fileDrg.updateStyle(False)
   
     def enter_button(self, event):
-        self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Hover.png'))
+        #self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Hover.png'))
+        self.ui.importPg_btn_imp.setIcon(QIcon(os.path.join(self.icons_path, 'Browse Button Hover 2.png')))
         
     def leave_button(self, event):
-        self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Default.png')) 
+        #self.ui.importPg_btn_imp.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Browse Button Default.png'))
+        self.ui.importPg_btn_imp.setIcon(QIcon(os.path.join(self.icons_path, 'Browse Button Default 2.png'))) 
 
     def spl_enter_button(self, event):
-        self.ui.importPg_btn_spl.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Split Button Hover.png'))
+        #self.ui.importPg_btn_spl.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Split Button Hover.png'))
+        self.ui.importPg_btn_spl.setIcon(QIcon(os.path.join(self.icons_path, 'Split Button 2 Hover.png')))
 
     def spl_leave_button(self, event):
-        self.ui.importPg_btn_spl.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Split Button Default.png'))  
+        #self.ui.importPg_btn_spl.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Split Button Default.png'))
+        self.ui.importPg_btn_spl.setIcon(QIcon(os.path.join(self.icons_path, 'Split Button 2 Default.png')))  
 
     def set_enter_button(self, event):
-        self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings_Icon_Hover.png'))
+        #self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings_Icon_Hover.png'))
+        self.ui.settingsBtn.setIcon(QIcon(os.path.join(self.icons_path, 'Settings_Icon_Hover 2.png')))
 
     def set_leave_button(self, event):
-        self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings Icon.png'))    
+        #self.ui.settingsBtn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Settings Icon.png'))
+        self.ui.settingsBtn.setIcon(QIcon(os.path.join(self.icons_path, 'Settings Icon.png')))    
 
     def set_ext_enter_button(self, event):
-        self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Hover.png'))
+        #self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Hover.png'))
+        self.ui.settingsPg_ext_btn.setIcon(QIcon(os.path.join(self.icons_path, 'Exit Icon Hover.png')))
 
     def set_ext_leave_button(self, event):
-        self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Default.png'))     
+        #self.ui.settingsPg_ext_btn.setIcon(QIcon('C:\\Users\\Nener\\Documents\\GitHub\\DISERO_SPLITTER\\Splitter_GUI_Assets_3\\Exit Icon Default.png'))
+        self.ui.settingsPg_ext_btn.setIcon(QIcon(os.path.join(self.icons_path, 'Exit Icon Default.png')))     
 
     def go_settings(self):
         self.ui.stackedWidget.setCurrentIndex(4)

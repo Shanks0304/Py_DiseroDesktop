@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guiQfVKOX.ui'
+## Form generated from reading UI file 'splitter_guiifSboB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.importPg_btn_spl.setStyleSheet(u"border: none;\n"
 "background-color: transparent;")
         icon = QIcon()
-        icon.addFile(u":/icons/Splitter_GUI_Assets_3/Split Button Default.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u":/icons/Splitter_GUI_Assets_3/Split Button 2 Default.png", QSize(), QIcon.Normal, QIcon.Off)
         self.importPg_btn_spl.setIcon(icon)
         self.importPg_btn_spl.setIconSize(QSize(211, 60))
         self.importPg_btn_spl.setFlat(True)
@@ -79,7 +79,7 @@ class Ui_MainWindow(object):
         self.importPg_btn_imp.setStyleSheet(u"border: none;\n"
 "background-color: transparent;")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/Splitter_GUI_Assets_3/Browse Button Default.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/Splitter_GUI_Assets_3/Browse Button Default 2.png", QSize(), QIcon.Normal, QIcon.Off)
         self.importPg_btn_imp.setIcon(icon1)
         self.importPg_btn_imp.setIconSize(QSize(248, 60))
         self.importPg_btn_imp.setFlat(True)
@@ -148,7 +148,12 @@ class Ui_MainWindow(object):
         self.settingsPg_exp_lbl.setGeometry(QRect(148, 468, 604, 55))
         self.settingsPg_exp_lbl.setStyleSheet(u"background-color: rgb(86, 86, 86);\n"
 "border: none;\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"color: rgb(30, 30, 30);\n"
+"font-family: \"Source Sans Pro\";\n"
+"font-size: 15pt; /* Adjust the font size as needed */\n"
+"font-weight: bold; /* Set to bold */\n"
+"padding-left: 10px;")
         self.settingsPg_stp_lbl = QLabel(self.settingsPg)
         self.settingsPg_stp_lbl.setObjectName(u"settingsPg_stp_lbl")
         self.settingsPg_stp_lbl.setGeometry(QRect(360, 560, 211, 131))
@@ -159,7 +164,12 @@ class Ui_MainWindow(object):
         self.settingsPg_licens_enter_btn.setGeometry(QRect(148, 265, 604, 55))
         self.settingsPg_licens_enter_btn.setStyleSheet(u"background-color: rgb(86, 86, 86);\n"
 "border: none;\n"
-"border-radius: 15px;")
+"border-radius: 15px;\n"
+"color: rgb(30, 30, 30);\n"
+"font-family: \"Source Sans Pro\";\n"
+"font-size: 15pt; /* Adjust the font size as needed */\n"
+"font-weight: bold; /* Set to bold */\n"
+"padding-left: 10px;")
         self.settingsPg_lic_lbl = QLabel(self.settingsPg)
         self.settingsPg_lic_lbl.setObjectName(u"settingsPg_lic_lbl")
         self.settingsPg_lic_lbl.setGeometry(QRect(270, 230, 371, 31))
@@ -252,6 +262,7 @@ class Ui_MainWindow(object):
         self.licensePg_cnf_btn.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
         self.settingsPg_exp_lbl.setText("")
         self.settingsPg_stp_lbl.setText(QCoreApplication.translate("MainWindow", u"Settings Page", None))
+        self.settingsPg_licens_enter_btn.setText("")
         self.settingsPg_lic_lbl.setText(QCoreApplication.translate("MainWindow", u"Please enter your license:", None))
         self.settingsPg_exp_head_lbl.setText(QCoreApplication.translate("MainWindow", u"Please enter a default export folder:", None))
         self.settingsBtn.setText("")

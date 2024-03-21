@@ -159,7 +159,7 @@ background-color: transparent;</string>
       </property>
       <property name="icon">
        <iconset resource="resource.qrc">
-        <normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Split Button Default.png</iconset>
+        <normaloff>:/icons/Splitter_GUI_Assets_3/Split Button 2 Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Split Button 2 Default.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -192,7 +192,7 @@ background-color: transparent;</string>
       </property>
       <property name="icon">
        <iconset resource="resource.qrc">
-        <normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default.png</iconset>
+        <normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default 2.png</normaloff>:/icons/Splitter_GUI_Assets_3/Browse Button Default 2.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -398,7 +398,12 @@ p, li { white-space: pre-wrap; }
       <property name="styleSheet">
        <string notr="true">background-color: rgb(86, 86, 86);
 border: none;
-border-radius: 15px;</string>
+border-radius: 15px;
+color: rgb(30, 30, 30);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: bold; /* Set to bold */
+padding-left: 10px;</string>
       </property>
       <property name="text">
        <string/>
@@ -435,7 +440,15 @@ border-radius: 15px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(86, 86, 86);
 border: none;
-border-radius: 15px;</string>
+border-radius: 15px;
+color: rgb(30, 30, 30);
+font-family: &quot;Source Sans Pro&quot;;
+font-size: 15pt; /* Adjust the font size as needed */
+font-weight: bold; /* Set to bold */
+padding-left: 10px;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="settingsPg_lic_lbl">

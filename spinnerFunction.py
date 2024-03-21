@@ -167,7 +167,7 @@ class Spin(QWidget):
 
         # Draw the current phrase
         painter.setFont(QFont('Arial', 14))
-        painter.setPen(QColor(220, 220, 220))  # Very light grey color
+        painter.setPen(QColor(86, 86, 86))  # Very light grey color
         painter.drawText(self.rect(), Qt.AlignCenter, self.phrases[self.current_phrase_index])
 
     def animate(self):
