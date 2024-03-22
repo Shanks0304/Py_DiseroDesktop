@@ -36,14 +36,27 @@ def invert_phase_and_mix(input_file_path, stems_files, output_file_path):
         summed_stems_data += data
 
     # Invert phase of the summed stems
-    inverted_stems_data = -summed_stems_data
+    inverted_stems_data = summed_stems_data * -1
 
+    error_occured = False
     # Mix inverted phase stems with the original track
-    mixed_data = original_data + inverted_stems_data
+    try:
+        print(summed_stems_data.shape)
+        print(original_data.shape)
+        mixed_data = original_data + inverted_stems_data
+        # Write the result to the output file
+        sf.write(output_file_path, mixed_data, samplerate, subtype='FLOAT')
+        print(f"Mixed and saved EE track to {output_file_path}")
+        error_occured = False
+    except ValueError:
+        print(stems_files)
+        print(summed_stems_data.shape)
+        print(original_data.shape)
+        error_occured = True
+    
+    return error_occured
 
-    # Write the result to the output file
-    sf.write(output_file_path, mixed_data, samplerate, subtype='FLOAT')
-    print(f"Mixed and saved EE track to {output_file_path}")
+    
 
 
 def run_additional_function(input_file_name, input_file, temp_dir_path, final_output_dir):
