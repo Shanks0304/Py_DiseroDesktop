@@ -42,7 +42,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="importPg">
      <widget class="Drag" name="importPg_wid_fileDrg" native="true">
@@ -85,16 +85,16 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resource.qrc">:/icons/Splitter_GUI_Assets_3/Rectangle Default.png</pixmap>
+        <pixmap resource="resource.qrc">:/icons/Splitter_GUI_Assets_3/Rectangle Default_browse.png</pixmap>
        </property>
       </widget>
       <widget class="QLabel" name="importPg_top_lbl">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>40</y>
+         <y>20</y>
          <width>501</width>
-         <height>31</height>
+         <height>71</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -176,35 +176,6 @@ background-color: transparent;</string>
        </size>
       </property>
       <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="filesLogo">
-      <property name="geometry">
-       <rect>
-        <x>373</x>
-        <y>279</y>
-        <width>154</width>
-        <height>154</height>
-       </rect>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0); /* Set background color to transparent */
-border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust path to your image and border size */</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resource.qrc">:/icons/Splitter_GUI_Assets_3/File Drop Icon.png</pixmap>
-      </property>
-      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>

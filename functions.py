@@ -3,6 +3,7 @@ import soundfile as sf
 import subprocess
 import shutil
 from pathlib import Path
+import librosa
 
 def adjust_volume_and_save(input_file, db_change, output_file):
     data, samplerate = sf.read(input_file)
@@ -38,11 +39,12 @@ def invert_phase_and_mix(input_file_path, stems_files, output_file_path):
     # Invert phase of the summed stems
     inverted_stems_data = summed_stems_data * -1
 
+    # check to make sure shapes match
+
+
     error_occured = False
     # Mix inverted phase stems with the original track
     try:
-        print(summed_stems_data.shape)
-        print(original_data.shape)
         mixed_data = original_data + inverted_stems_data
         # Write the result to the output file
         sf.write(output_file_path, mixed_data, samplerate, subtype='FLOAT')
@@ -50,13 +52,12 @@ def invert_phase_and_mix(input_file_path, stems_files, output_file_path):
         error_occured = False
     except ValueError:
         print(stems_files)
-        print(summed_stems_data.shape)
+        print(inverted_stems_data.shape)
         print(original_data.shape)
         error_occured = True
-    
-    return error_occured
 
     
+    return error_occured
 
 
 def run_additional_function(input_file_name, input_file, temp_dir_path, final_output_dir):
@@ -74,6 +75,7 @@ def run_additional_function(input_file_name, input_file, temp_dir_path, final_ou
         if stem_type in ['drums', 'bass', 'vocals']:
             selected_stems_files.append(new_file_path)      
 
+    '''
     # Create "EE" track
     ee_output_file_path = Path(final_output_dir) / f"{input_file_name} EE.wav"
     invert_phase_and_mix(input_file, selected_stems_files, ee_output_file_path)
@@ -83,6 +85,8 @@ def run_additional_function(input_file_name, input_file, temp_dir_path, final_ou
     if other_stem_path.exists():
         other_stem_path.unlink()
         print(f"Deleted 'Other' stem: {other_stem_path}")
+    '''
+    
 
 
     try:
@@ -92,3 +96,4 @@ def run_additional_function(input_file_name, input_file, temp_dir_path, final_ou
         # Handle PermissionError
         print("PermissionError:", e)
         # Optionally, perform error handling actions such as logging, notifying the user, etc.    
+

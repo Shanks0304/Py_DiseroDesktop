@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'splitter_guiMMDRGz.ui'
+## Form generated from reading UI file 'splitter_guiRCOhEL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -43,10 +43,10 @@ class Ui_MainWindow(object):
         self.importPg_dot_lbl = QLabel(self.importPg_wid_fileDrg)
         self.importPg_dot_lbl.setObjectName(u"importPg_dot_lbl")
         self.importPg_dot_lbl.setGeometry(QRect(0, 0, 538, 380))
-        self.importPg_dot_lbl.setPixmap(QPixmap(u":/icons/Splitter_GUI_Assets_3/Rectangle Default.png"))
+        self.importPg_dot_lbl.setPixmap(QPixmap(u":/icons/Splitter_GUI_Assets_3/Rectangle Default_browse.png"))
         self.importPg_top_lbl = QLabel(self.importPg_wid_fileDrg)
         self.importPg_top_lbl.setObjectName(u"importPg_top_lbl")
-        self.importPg_top_lbl.setGeometry(QRect(20, 40, 501, 31))
+        self.importPg_top_lbl.setGeometry(QRect(20, 20, 501, 71))
         self.importPg_top_lbl.setStyleSheet(u"color: rgb(95, 95, 95);\n"
 "font-family: \"Source Sans Pro\";\n"
 "font-size: 15pt; /* Adjust the font size as needed */\n"
@@ -76,14 +76,6 @@ class Ui_MainWindow(object):
         self.importPg_btn_imp.setIcon(icon1)
         self.importPg_btn_imp.setIconSize(QSize(248, 60))
         self.importPg_btn_imp.setFlat(True)
-        self.filesLogo = QLabel(self.importPg)
-        self.filesLogo.setObjectName(u"filesLogo")
-        self.filesLogo.setGeometry(QRect(373, 279, 154, 154))
-        self.filesLogo.setMaximumSize(QSize(16777215, 16777215))
-        self.filesLogo.setStyleSheet(u"background-color: rgba(0, 0, 0, 0); /* Set background color to transparent */\n"
-"border-image: url(path/to/your/image.png) 10 10 10 10 stretch stretch; /* Adjust path to your image and border size */")
-        self.filesLogo.setPixmap(QPixmap(u":/icons/Splitter_GUI_Assets_3/File Drop Icon.png"))
-        self.filesLogo.setScaledContents(True)
         self.importPg_file_lbl = QLabel(self.importPg)
         self.importPg_file_lbl.setObjectName(u"importPg_file_lbl")
         self.importPg_file_lbl.setGeometry(QRect(189, 347, 521, 31))
@@ -223,7 +215,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -235,7 +227,6 @@ class Ui_MainWindow(object):
         self.importPg_top_lbl.setText(QCoreApplication.translate("MainWindow", u"DROP YOUR REFERENCE FILE HERE", None))
         self.importPg_btn_spl.setText("")
         self.importPg_btn_imp.setText("")
-        self.filesLogo.setText("")
         self.importPg_file_lbl.setText("")
         self.donePg_lbl2.setText(QCoreApplication.translate("MainWindow", u"Step 4: Process Completed", None))
         self.donePg_lbl.setText(QCoreApplication.translate("MainWindow", u"Congrats or something", None))

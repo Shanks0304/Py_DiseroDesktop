@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>Splitter_GUI_Assets_3/Rectangle Default_browse.png</file>
     <file>Splitter_GUI_Assets_3/Settings_Icon_Hover 2.png</file>
     <file>Splitter_GUI_Assets_3/Browse Button Default 2.png</file>
     <file>Splitter_GUI_Assets_3/Browse Button Hover 2.png</file>

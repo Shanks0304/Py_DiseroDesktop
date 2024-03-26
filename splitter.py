@@ -43,28 +43,19 @@ class MainWindow(QMainWindow):
         self.icons_path = os.path.join(self.ROOT_DIR, 'Splitter_GUI_Assets_3')
 
         # check key
-        '''
+        
         if self.check_key(self.key):
             self.ui.stackedWidget.setCurrentIndex(0)
             self.ui.settingsBtn.show()
             self.ui.settingsPg_ext_btn.hide()
             self.ui.settingsPg_exp_btn.hide()
             self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
-            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
+            #self.ui.settingsPg_licens_enter_btn.setEnabled(False)
         else:
             self.ui.settingsBtn.hide()
             self.ui.settingsPg_ext_btn.hide()
             self.ui.stackedWidget.setCurrentIndex(4)
             self.ui.settingsPg_licens_enter_btn.setEnabled(True) 
-        '''
-        
-
-        self.ui.stackedWidget.setCurrentIndex(0)
-        self.ui.settingsBtn.show()
-        self.ui.settingsPg_ext_btn.hide()
-        self.ui.settingsPg_exp_btn.hide()
-        self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
-        self.ui.settingsPg_licens_enter_btn.setEnabled(False)
 
 
         # Load the user settings
@@ -140,6 +131,7 @@ class MainWindow(QMainWindow):
         self.ui.settingsPg_exp_btn.hide()
         self.ui.settingsBtn.show() 
         self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
         
     def check_key(self, key):
         validation = requests.post(
@@ -182,7 +174,8 @@ class MainWindow(QMainWindow):
         self.ui.importPg_btn_spl.show()
         self.ui.importPg_btn_spl.setEnabled(True)
         self.ui.importPg_file_lbl.show()
-        self.ui.filesLogo.hide()
+        self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default.png')))
+        #self.ui.filesLogo.hide()
 
     def licenseInputTest(self):
         text = self.ui.settingsPg_licens_enter_btn.text()
@@ -190,7 +183,7 @@ class MainWindow(QMainWindow):
             self.TEXT_FILE.write_text(text)
             self.ui.settingsPg_licens_enter_btn.clear()
             self.ui.settingsPg_lic_lbl.setText("LICENSE KEY VERIFIED")
-            self.ui.settingsPg_licens_enter_btn.setEnabled(False)
+            #self.ui.settingsPg_licens_enter_btn.setEnabled(False)
         else:
             self.ui.settingsPg_licens_enter_btn.clear()
             self.ui.settingsPg_lic_lbl.setText("Incorrect: Try Again")
@@ -222,7 +215,8 @@ class MainWindow(QMainWindow):
             self.ui.importPg_btn_spl.show()
             self.ui.importPg_btn_spl.setEnabled(True)
             self.ui.importPg_file_lbl.show()
-            self.ui.filesLogo.hide()
+            self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default.png')))
+            #self.ui.filesLogo.hide()
             
         else:
             pass
@@ -231,11 +225,11 @@ class MainWindow(QMainWindow):
         # First check if master directory still exists
         try:
             if not os.path.exists(self.master_output_dir):
-                self.ui.importPg_top_lbl.setText("Export Directory does not exist, please choose another one in the settings")
+                self.ui.importPg_top_lbl.setText("Export Directory does not exist\nPlease choose another one in the settings")
                 return
 
         except TypeError:
-            self.ui.importPg_top_lbl.setText("Export Directory does not exist, please choose another one in the settings")
+            self.ui.importPg_top_lbl.setText("Export Directory does not exist\nPlease choose another one in the settings")
             return
         
         # Create temporary directories
@@ -243,7 +237,7 @@ class MainWindow(QMainWindow):
         self.input_file_name = self.input_file.stem
 
         # Create final directory for stems to be placed in
-        self.final_output_dir = os.path.join(self.master_output_dir, str(self.input_file_name))
+        self.final_output_dir = os.path.join(self.master_output_dir, str(self.input_file_name) + " - Stems")
         error_occurred = False
         try:
             os.makedirs(self.final_output_dir)
@@ -253,7 +247,8 @@ class MainWindow(QMainWindow):
         if error_occurred:
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_btn_spl.hide()
-            self.ui.filesLogo.show()
+            self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default_browse.png')))
+            #self.ui.filesLogo.show()
             self.ui.importPg_file_lbl.hide()
             self.ui.importPg_top_lbl.setText("FOLDER WITH SONG NAME EXISTS")
             return
@@ -291,7 +286,8 @@ class MainWindow(QMainWindow):
             self.ui.importPg_btn_spl.hide()
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_file_lbl.hide()
-            self.ui.filesLogo.show()
+            self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default_browse.png')))
+            #self.ui.filesLogo.show()
         else:
             self.ui.settingsBtn.setEnabled(True)
             self.ui.importPg_top_lbl.setText("SPLITTING COMPLETE! DROP ANOTHER FILE?")
@@ -300,7 +296,8 @@ class MainWindow(QMainWindow):
             self.ui.importPg_btn_spl.hide()
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_file_lbl.hide()
-            self.ui.filesLogo.show()
+            self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default_browse.png')))
+            #self.ui.filesLogo.show()
 
 if __name__ == "__main__":
 
