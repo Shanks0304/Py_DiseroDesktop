@@ -3,7 +3,6 @@ import soundfile as sf
 import subprocess
 import shutil
 from pathlib import Path
-import librosa
 
 def adjust_volume_and_save(input_file, db_change, output_file):
     data, samplerate = sf.read(input_file)

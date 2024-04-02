@@ -11,6 +11,8 @@ import os
 import requests
 import json
 
+
+
 class SubprocessThread(QThread):
     output_ready = pyqtSignal(str)
 
@@ -21,10 +23,8 @@ class SubprocessThread(QThread):
 
     def run(self):
         # Run your subprocess command here
-        print("started my thing")
         demucs.separate.main(["--float32", "-d", "cpu", "--out", str(self.temp_dir_path), str(self.temp_input_file)])
 
-        
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -95,7 +95,8 @@ class MainWindow(QMainWindow):
         # Wait for a file drag
         self.ui.importPg_wid_fileDrg.fileDropped.connect(self.retrieve_dropped_file)
         self.ui.importPg_wid_fileDrg.updateStyle(False)
-  
+
+
     def enter_button(self, event):
         self.ui.importPg_btn_imp.setIcon(QIcon(os.path.join(self.icons_path, 'Browse Button Hover 2.png')))
         
@@ -248,7 +249,6 @@ class MainWindow(QMainWindow):
             self.ui.importPg_btn_imp.show()
             self.ui.importPg_btn_spl.hide()
             self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default_browse.png')))
-            #self.ui.filesLogo.show()
             self.ui.importPg_file_lbl.hide()
             self.ui.importPg_top_lbl.setText("FOLDER WITH SONG NAME EXISTS")
             return
@@ -265,7 +265,7 @@ class MainWindow(QMainWindow):
 
         # Start splitting process
 
-
+        
         self.subprocess_thread = SubprocessThread(self.temp_dir_path, self.temp_input_file)
         self.subprocess_thread.start()
         print("Thread started")
@@ -299,11 +299,12 @@ class MainWindow(QMainWindow):
             self.ui.importPg_dot_lbl.setPixmap(QPixmap(os.path.join(self.icons_path, 'Rectangle Default_browse.png')))
             #self.ui.filesLogo.show()
 
+
+
+
+
 if __name__ == "__main__":
-
-    # Initialize The App
     app = QApplication(sys.argv)
-
     UIWindow = MainWindow()
     UIWindow.show()
     sys.exit(app.exec_())
